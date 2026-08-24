@@ -13,12 +13,8 @@
             padding: 0;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, sans-serif;
             background: #f3f4f6;
             color: #1f2937;
         }
@@ -30,61 +26,35 @@
         header {
             background: linear-gradient(135deg, #111827, #1e3a8a);
             color: white;
-            padding: 18px 5%;
+            padding: 18px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 20px;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 3px 15px rgba(0,0,0,.2);
+            z-index: 100;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo h1 {
-            font-size: 24px;
-        }
-
-        .logo small {
-            display: block;
-            color: #bfdbfe;
-            font-size: 12px;
-            margin-top: 3px;
+        header h1 {
+            font-size: 25px;
         }
 
         nav {
             display: flex;
             align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
         }
 
         nav a {
             color: white;
             text-decoration: none;
+            margin-left: 25px;
             font-weight: bold;
-            transition: .2s;
+            transition: 0.2s;
         }
 
         nav a:hover {
             color: #93c5fd;
-        }
-
-        .cart-button {
-            width: auto;
-            background: #2563eb;
-            padding: 10px 16px;
-            border-radius: 8px;
-        }
-
-        .cart-button:hover {
-            background: #1d4ed8;
         }
 
         /* =========================
@@ -92,95 +62,140 @@
         ========================= */
 
         .hero {
-            background:
-                linear-gradient(rgba(17,24,39,.82), rgba(30,58,138,.88)),
-                linear-gradient(135deg, #2563eb, #111827);
-
-            color: white;
-            padding: 80px 20px;
+            background: linear-gradient(135deg, #dbeafe, #ffffff);
+            padding: 65px 20px;
             text-align: center;
         }
 
         .hero h2 {
-            font-size: 44px;
+            font-size: 42px;
             margin-bottom: 15px;
+            color: #111827;
         }
 
         .hero p {
+            color: #4b5563;
             font-size: 19px;
-            color: #dbeafe;
-            max-width: 700px;
-            margin: auto;
-        }
-
-        .hero-button {
-            display: inline-block;
-            margin-top: 25px;
-            background: white;
-            color: #1d4ed8;
-            padding: 13px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .hero-button:hover {
-            background: #dbeafe;
         }
 
         /* =========================
-           CONTAINER
+           CONTENEDOR
         ========================= */
 
         .container {
             max-width: 1200px;
-            margin: 45px auto;
+            margin: 40px auto;
             padding: 0 20px;
         }
 
         .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .section-title h2 {
-            font-size: 30px;
-            margin-bottom: 8px;
-        }
-
-        .section-title p {
-            color: #6b7280;
+            margin-bottom: 25px;
+            font-size: 28px;
         }
 
         /* =========================
-           BUSCADOR
+           FORMULARIO
         ========================= */
 
-        .filters {
+        .form-card {
             background: white;
-            padding: 20px;
-            border-radius: 14px;
-            box-shadow: 0 4px 15px rgba(0,0,0,.07);
-            margin-bottom: 30px;
-
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 15px;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 45px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 5px solid #2563eb;
         }
 
-        .filters input,
-        .filters select {
-            width: 100%;
-            padding: 13px;
+        .form-card h2 {
+            margin-bottom: 8px;
+        }
+
+        .form-card > p {
+            color: #6b7280;
+            margin-bottom: 25px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .campo.full {
+            grid-column: 1 / -1;
+        }
+
+        .campo label {
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        .campo input,
+        .campo textarea {
+            padding: 12px;
             border: 1px solid #d1d5db;
             border-radius: 8px;
             font-size: 15px;
             outline: none;
+            transition: 0.2s;
         }
 
-        .filters input:focus,
-        .filters select:focus {
+        .campo input:focus,
+        .campo textarea:focus {
             border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+        }
+
+        .campo textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .btn-agregar {
+            margin-top: 20px;
+            width: auto;
+            padding: 13px 28px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-agregar:hover {
+            background: #1d4ed8;
+        }
+
+        /* =========================
+           MENSAJES
+        ========================= */
+
+        #mensaje {
+            margin-top: 18px;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+        }
+
+        .mensaje-exito {
+            display: block !important;
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .mensaje-error {
+            display: block !important;
+            background: #fee2e2;
+            color: #991b1b;
         }
 
         /* =========================
@@ -196,33 +211,20 @@
         .product {
             background: white;
             border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 18px rgba(0,0,0,.08);
-            transition: transform .2s, box-shadow .2s;
-            display: flex;
-            flex-direction: column;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .product:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,.13);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
         }
 
-        .product-top {
-            background: linear-gradient(135deg, #dbeafe, #eff6ff);
-            height: 160px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .product-icon {
-            font-size: 70px;
-        }
-
-        .product-body {
-            padding: 20px;
-            flex: 1;
+        .product .icon {
+            font-size: 65px;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         .product h3 {
@@ -234,17 +236,17 @@
             display: inline-block;
             background: #dbeafe;
             color: #1d4ed8;
-            padding: 5px 9px;
+            padding: 5px 10px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: bold;
             margin-bottom: 12px;
         }
 
         .description {
             color: #6b7280;
-            line-height: 1.5;
             min-height: 45px;
+            line-height: 1.5;
         }
 
         .price {
@@ -255,283 +257,51 @@
         }
 
         .stock {
-            color: #059669;
-            font-size: 14px;
-            margin-bottom: 15px;
+            color: #4b5563;
+            margin-bottom: 18px;
         }
 
-        .stock.low {
+        .stock-disponible {
+            color: #15803d;
+            font-weight: bold;
+        }
+
+        .stock-agotado {
             color: #dc2626;
+            font-weight: bold;
         }
 
-        button {
+        .btn-carrito {
             width: 100%;
             padding: 12px;
             border: none;
             border-radius: 8px;
-            background: #2563eb;
+            background: #111827;
             color: white;
             font-size: 15px;
             font-weight: bold;
             cursor: pointer;
-            transition: .2s;
+            transition: 0.2s;
         }
 
-        button:hover {
-            background: #1d4ed8;
+        .btn-carrito:hover {
+            background: #2563eb;
         }
 
-        button.secondary {
-            background: #6b7280;
-        }
-
-        button.secondary:hover {
-            background: #4b5563;
-        }
-
-        button.danger {
-            background: #dc2626;
-        }
-
-        button.danger:hover {
-            background: #b91c1c;
+        .btn-carrito:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
         }
 
         /* =========================
-           MENSAJES
+           CARGANDO
         ========================= */
 
-        #mensaje {
-            margin: 20px 0;
+        .cargando {
             text-align: center;
-            font-weight: bold;
-        }
-
-        .success {
-            color: #059669;
-        }
-
-        .error {
-            color: #dc2626;
-        }
-
-        /* =========================
-           PANELES
-        ========================= */
-
-        .panel {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 18px rgba(0,0,0,.08);
-            margin-top: 40px;
-        }
-
-        .panel h2 {
-            margin-bottom: 8px;
-        }
-
-        .panel-description {
+            padding: 40px;
             color: #6b7280;
-            margin-bottom: 25px;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 7px;
-        }
-
-        .form-group.full {
-            grid-column: 1 / -1;
-        }
-
-        .form-group label {
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            padding: 12px;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
-            font-size: 15px;
-            font-family: inherit;
-        }
-
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .admin-button {
-            margin-top: 20px;
-            max-width: 250px;
-        }
-
-        /* =========================
-           LOGIN
-        ========================= */
-
-        .login-section {
-            max-width: 600px;
-            margin: 50px auto;
-        }
-
-        .login-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 18px rgba(0,0,0,.08);
-        }
-
-        .login-card input {
-            width: 100%;
-            padding: 13px;
-            margin: 10px 0 15px;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
-        }
-
-        #usuarioLogueado {
-            background: #dcfce7;
-            color: #166534;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-            display: none;
-        }
-
-        /* =========================
-           CARRITO
-        ========================= */
-
-        .cart-panel {
-            position: fixed;
-            top: 0;
-            right: -450px;
-            width: 420px;
-            max-width: 95%;
-            height: 100vh;
-            background: white;
-            z-index: 2000;
-            box-shadow: -5px 0 20px rgba(0,0,0,.2);
-            padding: 25px;
-            transition: right .3s;
-            overflow-y: auto;
-        }
-
-        .cart-panel.active {
-            right: 0;
-        }
-
-        .cart-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-
-        .close-cart {
-            width: auto;
-            background: #ef4444;
-            padding: 8px 12px;
-        }
-
-        .cart-item {
-            border-bottom: 1px solid #e5e7eb;
-            padding: 15px 0;
-        }
-
-        .cart-item h4 {
-            margin-bottom: 7px;
-        }
-
-        .cart-item-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .cart-actions {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 10px;
-        }
-
-        .cart-actions button {
-            width: auto;
-            padding: 6px 10px;
-        }
-
-        .cart-total {
-            border-top: 2px solid #111827;
-            margin-top: 20px;
-            padding-top: 20px;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .empty-cart {
-            text-align: center;
-            color: #6b7280;
-            padding: 40px 10px;
-        }
-
-        /* =========================
-           CHECKOUT
-        ========================= */
-
-        .checkout {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,.6);
-            z-index: 3000;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        .checkout.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .checkout-card {
-            background: white;
-            width: 600px;
-            max-width: 100%;
-            border-radius: 15px;
-            padding: 30px;
-        }
-
-        .checkout-card h2 {
-            margin-bottom: 20px;
-        }
-
-        .checkout-card input,
-        .checkout-card select {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0 15px;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
-        }
-
-        .checkout-buttons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            font-size: 18px;
         }
 
         /* =========================
@@ -543,52 +313,45 @@
             background: #111827;
             color: white;
             text-align: center;
-            padding: 35px 20px;
+            padding: 30px 20px;
         }
 
         footer p {
-            margin: 7px 0;
+            margin: 5px;
         }
 
-        .developer {
+        .autor {
             color: #93c5fd;
-            margin-top: 15px !important;
+            font-weight: bold;
         }
 
         /* =========================
            RESPONSIVE
         ========================= */
 
-        @media (max-width: 800px) {
+        @media (max-width: 700px) {
 
             header {
+                padding: 15px 20px;
                 flex-direction: column;
-                text-align: center;
+                gap: 12px;
             }
 
-            nav {
-                justify-content: center;
+            nav a {
+                margin: 0 8px;
+                font-size: 14px;
             }
 
             .hero h2 {
-                font-size: 32px;
-            }
-
-            .filters {
-                grid-template-columns: 1fr;
+                font-size: 30px;
             }
 
             .form-grid {
                 grid-template-columns: 1fr;
             }
 
-            .form-group.full {
+            .campo.full {
                 grid-column: auto;
-            }
-
-            .cart-panel {
-                width: 100%;
-                right: -100%;
             }
         }
     </style>
@@ -596,233 +359,125 @@
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
 
-    <div class="logo">
-
-        <div style="font-size: 35px;">
-            🛒
-        </div>
-
-        <div>
-            <h1>E-commerce Go</h1>
-            <small>Servicios Web REST</small>
-        </div>
-
-    </div>
+    <h1>🛒 E-commerce Go</h1>
 
     <nav>
-
-        <a href="#inicio">Inicio</a>
-
-        <a href="#productos">
-            Productos
-        </a>
-
-        <a href="#categorias">
-            Categorías
-        </a>
-
-        <a href="#login">
-            Iniciar sesión
-        </a>
-
-        <button
-            class="cart-button"
-            onclick="abrirCarrito()">
-
-            🛒 Carrito
-            (<span id="contadorCarrito">0</span>)
-
-        </button>
-
+        <a href="/">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#agregar">Agregar producto</a>
     </nav>
 
 </header>
 
+<section class="hero">
 
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero" id="inicio">
-
-    <h2>
-        Bienvenido a E-commerce Go
-    </h2>
+    <h2>Bienvenido a nuestra tienda</h2>
 
     <p>
-        Encuentra tecnología, accesorios y productos
-        para tu día a día al mejor precio.
+        Tecnología y accesorios para todos.
     </p>
-
-    <a
-        href="#productos"
-        class="hero-button">
-
-        🛍️ Ver productos
-
-    </a>
 
 </section>
 
 
-<!-- =========================
-     PRODUCTOS
-========================= -->
-
-<div class="container" id="productos">
-
-    <div class="section-title">
-
-        <h2>
-            🛍️ Nuestros productos
-        </h2>
-
-        <p>
-            Explora nuestro catálogo de productos.
-        </p>
-
-    </div>
-
-
-    <!-- BUSCADOR -->
-
-    <div class="filters">
-
-        <input
-            type="text"
-            id="buscador"
-            placeholder="🔎 Buscar producto..."
-            oninput="filtrarProductos()">
-
-        <select
-            id="filtroCategoria"
-            onchange="filtrarProductos()">
-
-            <option value="">
-                Todas las categorías
-            </option>
-
-        </select>
-
-    </div>
-
-
-    <div id="mensaje"></div>
-
-
-    <div
-        id="productos-container"
-        class="products">
-
-        <p>
-            Cargando productos...
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     PANEL ADMINISTRADOR
-========================= -->
-
 <div class="container">
 
-    <div class="panel" id="admin">
+    <!-- =========================
+         AGREGAR PRODUCTO
+    ========================= -->
 
-        <h2>
-            👨‍💼 Panel de administrador
-        </h2>
+    <section class="form-card" id="agregar">
 
-        <p class="panel-description">
-            Agrega nuevos productos al catálogo mediante
-            el servicio REST POST /api/products.
+        <h2>➕ Agregar nuevo producto</h2>
+
+        <p>
+            Registra un nuevo producto utilizando nuestro servicio REST.
         </p>
 
-        <form id="productoForm">
+        <form id="producto-form">
 
             <div class="form-grid">
 
-                <div class="form-group">
+                <div class="campo">
 
-                    <label>
+                    <label for="nombre">
                         Nombre del producto
                     </label>
 
                     <input
                         type="text"
-                        id="nombreProducto"
+                        id="nombre"
                         placeholder="Ej. Tablet Samsung"
-                        required>
+                        required
+                    >
 
                 </div>
 
 
-                <div class="form-group">
+                <div class="campo">
 
-                    <label>
+                    <label for="categoria">
                         Categoría
                     </label>
 
                     <input
                         type="text"
-                        id="categoriaProducto"
+                        id="categoria"
                         placeholder="Ej. Tecnologia"
-                        required>
+                        required
+                    >
 
                 </div>
 
 
-                <div class="form-group">
+                <div class="campo">
 
-                    <label>
+                    <label for="precio">
                         Precio
                     </label>
 
                     <input
                         type="number"
-                        id="precioProducto"
+                        id="precio"
+                        placeholder="Ej. 299.99"
                         step="0.01"
                         min="0.01"
-                        placeholder="299.99"
-                        required>
+                        required
+                    >
 
                 </div>
 
 
-                <div class="form-group">
+                <div class="campo">
 
-                    <label>
+                    <label for="stock">
                         Stock
                     </label>
 
                     <input
                         type="number"
-                        id="stockProducto"
+                        id="stock"
+                        placeholder="Ej. 10"
                         min="0"
-                        placeholder="10"
-                        required>
+                        required
+                    >
 
                 </div>
 
 
-                <div class="form-group full">
+                <div class="campo full">
 
-                    <label>
+                    <label for="descripcion">
                         Descripción
                     </label>
 
                     <textarea
-                        id="descripcionProducto"
-                        placeholder="Descripción del producto..."
-                        required></textarea>
+                        id="descripcion"
+                        placeholder="Describe el producto..."
+                        required
+                    ></textarea>
 
                 </div>
 
@@ -831,268 +486,65 @@
 
             <button
                 type="submit"
-                class="admin-button">
-
+                class="btn-agregar"
+            >
                 ➕ Agregar producto
-
             </button>
 
         </form>
 
-    </div>
 
-</div>
+        <div id="mensaje"></div>
 
-
-<!-- =========================
-     LOGIN
-========================= -->
-
-<div class="container" id="login">
-
-    <div class="login-section">
-
-        <div class="login-card">
-
-            <h2>
-                🔐 Inicio de sesión
-            </h2>
-
-            <p
-                style="color:#6b7280; margin:10px 0 20px;">
-
-                Ingresa el correo de un cliente registrado.
-
-            </p>
+    </section>
 
 
-            <form id="loginForm">
+    <!-- =========================
+         PRODUCTOS
+    ========================= -->
 
-                <label>
-                    Correo electrónico
-                </label>
+    <section id="productos">
 
-                <input
-                    type="email"
-                    id="loginEmail"
-                    placeholder="cliente@demo.com"
-                    required>
-
-
-                <button type="submit">
-
-                    🔑 Iniciar sesión
-
-                </button>
-
-            </form>
-
-
-            <div id="usuarioLogueado"></div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     CARRITO
-========================= -->
-
-<div
-    id="cartPanel"
-    class="cart-panel">
-
-    <div class="cart-header">
-
-        <h2>
-            🛒 Mi carrito
+        <h2 class="section-title">
+            🛍️ Nuestros productos
         </h2>
-
-        <button
-            class="close-cart"
-            onclick="cerrarCarrito()">
-
-            ✕
-
-        </button>
-
-    </div>
-
-
-    <div id="carrito-container">
-
-        <div class="empty-cart">
-
-            🛒
-            <br><br>
-
-            Tu carrito está vacío.
-
-        </div>
-
-    </div>
-
-
-    <div class="cart-total">
-
-        Total:
-        $<span id="totalCarrito">0.00</span>
-
-    </div>
-
-
-    <button
-        onclick="abrirCheckout()"
-        style="margin-top:20px;">
-
-        💳 Realizar compra
-
-    </button>
-
-</div>
-
-
-<!-- =========================
-     CHECKOUT
-========================= -->
-
-<div
-    id="checkout"
-    class="checkout">
-
-    <div class="checkout-card">
-
-        <h2>
-            💳 Finalizar compra
-        </h2>
-
-        <p style="color:#6b7280; margin-bottom:20px;">
-
-            Completa los datos para realizar tu pedido.
-
-        </p>
-
-
-        <label>
-            Nombre completo
-        </label>
-
-        <input
-            type="text"
-            id="clienteNombre"
-            placeholder="Tu nombre">
-
-
-        <label>
-            Correo electrónico
-        </label>
-
-        <input
-            type="email"
-            id="clienteEmail"
-            placeholder="correo@ejemplo.com">
-
-
-        <label>
-            Método de pago
-        </label>
-
-        <select id="metodoPago">
-
-            <option value="">
-                Selecciona un método
-            </option>
-
-            <option value="TARJETA">
-                💳 Tarjeta
-            </option>
-
-            <option value="TRANSFERENCIA">
-                🏦 Transferencia
-            </option>
-
-            <option value="EFECTIVO">
-                💵 Efectivo
-            </option>
-
-        </select>
 
 
         <div
-            id="checkoutResumen"
-            style="
-                background:#f3f4f6;
-                padding:15px;
-                border-radius:8px;
-                margin-bottom:20px;
-            ">
+            id="productos-container"
+            class="products"
+        >
+
+            <div class="cargando">
+                Cargando productos...
+            </div>
 
         </div>
 
-
-        <div class="checkout-buttons">
-
-            <button
-                class="secondary"
-                onclick="cerrarCheckout()">
-
-                Cancelar
-
-            </button>
-
-
-            <button
-                onclick="realizarCompra()">
-
-                ✅ Confirmar compra
-
-            </button>
-
-        </div>
-
-    </div>
+    </section>
 
 </div>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
 
 <footer>
 
     <p>
-        <strong>
-            🛒 E-commerce Go
-        </strong>
+        🛒 E-commerce Go
     </p>
 
     <p>
-        Tienda tecnológica desarrollada con
-        Go y Servicios Web REST.
+        Servicios Web REST
     </p>
 
-    <p class="developer">
-
-        👨‍💻 Desarrollado por:
-        <strong>
+    <p>
+        Desarrollado por
+        <span class="autor">
             Landy Hernandez
-        </strong>
-
+        </span>
     </p>
 
-    <p
-        style="
-            font-size:13px;
-            color:#9ca3af;
-            margin-top:10px;
-        ">
-
-        Proyecto académico
-
+    <p>
+        Proyecto académico - 2026
     </p>
 
 </footer>
@@ -1100,1237 +552,214 @@
 
 <script>
 
-/* =====================================================
-   VARIABLES
-===================================================== */
+    // ==========================================
+    // CARGAR PRODUCTOS
+    // ==========================================
 
-let todosLosProductos = [];
+    async function cargarProductos() {
 
-let carrito = [];
+        const contenedor =
+            document.getElementById("productos-container");
 
-let clienteActual = null;
+        try {
 
+            const respuesta =
+                await fetch("/api/products");
 
-/* =====================================================
-   CARGAR PRODUCTOS
-===================================================== */
+            if (!respuesta.ok) {
 
-async function cargarProductos() {
-
-    const contenedor =
-        document.getElementById("productos-container");
-
-    try {
-
-        const respuesta =
-            await fetch("/api/products");
-
-        if (!respuesta.ok) {
-
-            throw new Error(
-                "No se pudieron obtener los productos"
-            );
-
-        }
-
-        todosLosProductos =
-            await respuesta.json();
-
-        cargarCategorias();
-
-        mostrarProductos(
-            todosLosProductos
-        );
-
-    } catch (error) {
-
-        contenedor.innerHTML = `
-
-            <p class="error">
-                ❌ No se pudieron cargar los productos.
-            </p>
-
-        `;
-
-        console.error(error);
-    }
-}
-
-
-/* =====================================================
-   MOSTRAR PRODUCTOS
-===================================================== */
-
-function mostrarProductos(productos) {
-
-    const contenedor =
-        document.getElementById(
-            "productos-container"
-        );
-
-    contenedor.innerHTML = "";
-
-
-    if (productos.length === 0) {
-
-        contenedor.innerHTML = `
-
-            <p>
-                No se encontraron productos.
-            </p>
-
-        `;
-
-        return;
-    }
-
-
-    productos.forEach(producto => {
-
-        const tarjeta =
-            document.createElement("div");
-
-        tarjeta.className =
-            "product";
-
-
-        let icono = obtenerIcono(
-            producto.category
-        );
-
-
-        let stockClass = "";
-
-        if (producto.stock <= 5) {
-
-            stockClass = "low";
-
-        }
-
-
-        tarjeta.innerHTML = `
-
-            <div class="product-top">
-
-                <div class="product-icon">
-
-                    ${icono}
-
-                </div>
-
-            </div>
-
-
-            <div class="product-body">
-
-                <h3>
-                    ${producto.name}
-                </h3>
-
-
-                <span class="category">
-
-                    ${producto.category}
-
-                </span>
-
-
-                <p class="description">
-
-                    ${producto.description}
-
-                </p>
-
-
-                <p class="price">
-
-                    $${Number(
-                        producto.price
-                    ).toFixed(2)}
-
-                </p>
-
-
-                <p class="stock ${stockClass}">
-
-                    ${
-                        producto.stock > 0
-                        ? "✓ Stock disponible: "
-                            + producto.stock
-                        : "✕ Producto agotado"
-                    }
-
-                </p>
-
-
-                <button
-                    onclick="agregarCarrito(${producto.id})"
-                    ${producto.stock <= 0 ? "disabled" : ""}>
-
-                    🛒 Agregar al carrito
-
-                </button>
-
-            </div>
-
-        `;
-
-
-        contenedor.appendChild(tarjeta);
-
-    });
-}
-
-
-/* =====================================================
-   ICONOS POR CATEGORÍA
-===================================================== */
-
-function obtenerIcono(categoria) {
-
-    const cat =
-        categoria.toLowerCase();
-
-
-    if (
-        cat.includes("tecnologia") ||
-        cat.includes("comput")
-    ) {
-
-        return "💻";
-
-    }
-
-    if (
-        cat.includes("accesorio")
-    ) {
-
-        return "⌨️";
-
-    }
-
-    if (
-        cat.includes("audio")
-    ) {
-
-        return "🎧";
-
-    }
-
-    if (
-        cat.includes("celular") ||
-        cat.includes("telefono")
-    ) {
-
-        return "📱";
-
-    }
-
-    if (
-        cat.includes("gaming") ||
-        cat.includes("juego")
-    ) {
-
-        return "🎮";
-
-    }
-
-    if (
-        cat.includes("oficina")
-    ) {
-
-        return "🖨️";
-
-    }
-
-    return "📦";
-}
-
-
-/* =====================================================
-   CATEGORÍAS
-===================================================== */
-
-function cargarCategorias() {
-
-    const select =
-        document.getElementById(
-            "filtroCategoria"
-        );
-
-
-    const categorias =
-        [
-            ...new Set(
-                todosLosProductos.map(
-                    producto =>
-                        producto.category
-                )
-            )
-        ];
-
-
-    select.innerHTML = `
-
-        <option value="">
-            Todas las categorías
-        </option>
-
-    `;
-
-
-    categorias.forEach(categoria => {
-
-        const option =
-            document.createElement("option");
-
-        option.value = categoria;
-
-        option.textContent = categoria;
-
-        select.appendChild(option);
-
-    });
-}
-
-
-/* =====================================================
-   BUSCAR Y FILTRAR
-===================================================== */
-
-function filtrarProductos() {
-
-    const texto =
-        document
-            .getElementById("buscador")
-            .value
-            .toLowerCase()
-            .trim();
-
-
-    const categoria =
-        document
-            .getElementById("filtroCategoria")
-            .value;
-
-
-    const resultados =
-        todosLosProductos.filter(producto => {
-
-            const coincideTexto =
-
-                producto.name
-                    .toLowerCase()
-                    .includes(texto)
-
-                ||
-
-                producto.description
-                    .toLowerCase()
-                    .includes(texto);
-
-
-            const coincideCategoria =
-
-                categoria === ""
-                ||
-                producto.category === categoria;
-
-
-            return (
-                coincideTexto &&
-                coincideCategoria
-            );
-
-        });
-
-
-    mostrarProductos(resultados);
-}
-
-
-/* =====================================================
-   CARRITO
-===================================================== */
-
-function agregarCarrito(id) {
-
-    const producto =
-        todosLosProductos.find(
-            p => p.id === id
-        );
-
-
-    if (!producto) {
-
-        return;
-
-    }
-
-
-    const existente =
-        carrito.find(
-            item => item.id === id
-        );
-
-
-    if (existente) {
-
-        if (
-            existente.quantity
-            < producto.stock
-        ) {
-
-            existente.quantity++;
-
-        } else {
-
-            mostrarMensaje(
-                "⚠️ No hay más stock disponible.",
-                "error"
-            );
-
-            return;
-        }
-
-    } else {
-
-        carrito.push({
-
-            id: producto.id,
-
-            name: producto.name,
-
-            price: producto.price,
-
-            stock: producto.stock,
-
-            quantity: 1
-
-        });
-
-    }
-
-
-    actualizarCarrito();
-
-
-    mostrarMensaje(
-        "✅ " + producto.name +
-        " fue agregado al carrito.",
-        "success"
-    );
-}
-
-
-function actualizarCarrito() {
-
-    const contenedor =
-        document.getElementById(
-            "carrito-container"
-        );
-
-
-    const contador =
-        document.getElementById(
-            "contadorCarrito"
-        );
-
-
-    const totalElemento =
-        document.getElementById(
-            "totalCarrito"
-        );
-
-
-    const cantidadTotal =
-        carrito.reduce(
-            (total, item) =>
-                total + item.quantity,
-            0
-        );
-
-
-    contador.textContent =
-        cantidadTotal;
-
-
-    if (carrito.length === 0) {
-
-        contenedor.innerHTML = `
-
-            <div class="empty-cart">
-
-                🛒
-                <br><br>
-
-                Tu carrito está vacío.
-
-            </div>
-
-        `;
-
-        totalElemento.textContent =
-            "0.00";
-
-        return;
-    }
-
-
-    contenedor.innerHTML = "";
-
-
-    let total = 0;
-
-
-    carrito.forEach(item => {
-
-        const subtotal =
-            item.price * item.quantity;
-
-
-        total += subtotal;
-
-
-        const div =
-            document.createElement("div");
-
-
-        div.className =
-            "cart-item";
-
-
-        div.innerHTML = `
-
-            <h4>
-                ${item.name}
-            </h4>
-
-
-            <div class="cart-item-info">
-
-                <span>
-                    $${item.price.toFixed(2)}
-                </span>
-
-                <strong>
-                    $${subtotal.toFixed(2)}
-                </strong>
-
-            </div>
-
-
-            <div class="cart-actions">
-
-                <button
-                    onclick="cambiarCantidad(
-                        ${item.id},
-                        -1
-                    )">
-
-                    −
-
-                </button>
-
-
-                <span>
-                    Cantidad:
-                    ${item.quantity}
-                </span>
-
-
-                <button
-                    onclick="cambiarCantidad(
-                        ${item.id},
-                        1
-                    )">
-
-                    +
-
-                </button>
-
-
-                <button
-                    class="danger"
-                    onclick="eliminarDelCarrito(
-                        ${item.id}
-                    )">
-
-                    🗑️
-
-                </button>
-
-            </div>
-
-        `;
-
-
-        contenedor.appendChild(div);
-
-    });
-
-
-    totalElemento.textContent =
-        total.toFixed(2);
-}
-
-
-function cambiarCantidad(id, cambio) {
-
-    const item =
-        carrito.find(
-            producto => producto.id === id
-        );
-
-
-    if (!item) {
-
-        return;
-
-    }
-
-
-    const nuevaCantidad =
-        item.quantity + cambio;
-
-
-    if (nuevaCantidad <= 0) {
-
-        eliminarDelCarrito(id);
-
-        return;
-
-    }
-
-
-    if (
-        nuevaCantidad > item.stock
-    ) {
-
-        mostrarMensaje(
-            "⚠️ No hay suficiente stock.",
-            "error"
-        );
-
-        return;
-
-    }
-
-
-    item.quantity =
-        nuevaCantidad;
-
-
-    actualizarCarrito();
-}
-
-
-function eliminarDelCarrito(id) {
-
-    carrito =
-        carrito.filter(
-            item => item.id !== id
-        );
-
-
-    actualizarCarrito();
-}
-
-
-function abrirCarrito() {
-
-    document
-        .getElementById("cartPanel")
-        .classList.add("active");
-
-}
-
-
-function cerrarCarrito() {
-
-    document
-        .getElementById("cartPanel")
-        .classList.remove("active");
-
-}
-
-
-/* =====================================================
-   CHECKOUT
-===================================================== */
-
-function abrirCheckout() {
-
-    if (carrito.length === 0) {
-
-        alert(
-            "El carrito está vacío."
-        );
-
-        return;
-
-    }
-
-
-    const resumen =
-        document.getElementById(
-            "checkoutResumen"
-        );
-
-
-    let total = 0;
-
-
-    let html = "<strong>Resumen:</strong><br><br>";
-
-
-    carrito.forEach(item => {
-
-        const subtotal =
-            item.price * item.quantity;
-
-
-        total += subtotal;
-
-
-        html += `
-
-            ${item.name}
-            x ${item.quantity}
-            =
-            $${subtotal.toFixed(2)}
-
-            <br>
-
-        `;
-
-    });
-
-
-    html += `
-
-        <hr style="margin:10px 0">
-
-        <strong>
-            Total:
-            $${total.toFixed(2)}
-        </strong>
-
-    `;
-
-
-    resumen.innerHTML =
-        html;
-
-
-    document
-        .getElementById("checkout")
-        .classList.add("active");
-
-}
-
-
-function cerrarCheckout() {
-
-    document
-        .getElementById("checkout")
-        .classList.remove("active");
-
-}
-
-
-/* =====================================================
-   REALIZAR COMPRA
-===================================================== */
-
-async function realizarCompra() {
-
-    const nombre =
-        document
-            .getElementById(
-                "clienteNombre"
-            )
-            .value
-            .trim();
-
-
-    const email =
-        document
-            .getElementById(
-                "clienteEmail"
-            )
-            .value
-            .trim();
-
-
-    const metodo =
-        document
-            .getElementById(
-                "metodoPago"
-            )
-            .value;
-
-
-    if (
-        nombre === ""
-        ||
-        email === ""
-        ||
-        metodo === ""
-    ) {
-
-        alert(
-            "Completa todos los campos."
-        );
-
-        return;
-
-    }
-
-
-    try {
-
-        /* =========================
-           CREAR CLIENTE
-        ========================= */
-
-        const clienteRespuesta =
-            await fetch(
-                "/api/customers",
-                {
-                    method: "POST",
-
-                    headers: {
-                        "Content-Type":
-                            "application/json"
-                    },
-
-                    body: JSON.stringify({
-
-                        name: nombre,
-
-                        email: email
-
-                    })
-
-                }
-            );
-
-
-        let cliente;
-
-
-        if (
-            clienteRespuesta.ok
-        ) {
-
-            cliente =
-                await clienteRespuesta.json();
-
-        } else {
-
-            /*
-               Si el cliente ya existe,
-               usamos el cliente demo.
-            */
-
-            cliente =
-                await obtenerClientePorEmail(
-                    email
-                );
-
-        }
-
-
-        if (!cliente) {
-
-            alert(
-                "No se pudo registrar el cliente."
-            );
-
-            return;
-
-        }
-
-
-        /* =========================
-           CREAR ORDEN
-        ========================= */
-
-        const items =
-            carrito.map(item => ({
-
-                product_id: item.id,
-
-                quantity: item.quantity
-
-            }));
-
-
-        const ordenRespuesta =
-            await fetch(
-                "/api/orders",
-                {
-                    method: "POST",
-
-                    headers: {
-                        "Content-Type":
-                            "application/json"
-                    },
-
-                    body: JSON.stringify({
-
-                        customer_id:
-                            cliente.id,
-
-                        items: items
-
-                    })
-
-                }
-            );
-
-
-        const orden =
-            await ordenRespuesta.json();
-
-
-        if (
-            !ordenRespuesta.ok
-        ) {
-
-            alert(
-                orden.error ||
-                "No se pudo crear la orden."
-            );
-
-            return;
-
-        }
-
-
-        /* =========================
-           REALIZAR PAGO
-        ========================= */
-
-        const pagoRespuesta =
-            await fetch(
-                "/api/payments",
-                {
-                    method: "POST",
-
-                    headers: {
-                        "Content-Type":
-                            "application/json"
-                    },
-
-                    body: JSON.stringify({
-
-                        order_id:
-                            orden.id,
-
-                        amount:
-                            orden.total,
-
-                        method:
-                            metodo
-
-                    })
-
-                }
-            );
-
-
-        const pago =
-            await pagoRespuesta.json();
-
-
-        if (
-            !pagoRespuesta.ok
-        ) {
-
-            alert(
-                pago.error ||
-                "No se pudo procesar el pago."
-            );
-
-            return;
-
-        }
-
-
-        alert(
-
-            "✅ ¡Compra realizada correctamente!\n\n" +
-
-            "Orden: #" +
-            orden.id +
-            "\n" +
-
-            "Total: $" +
-            Number(
-                orden.total
-            ).toFixed(2) +
-            "\n\n" +
-
-            "Pago: " +
-            pago.status
-
-        );
-
-
-        carrito = [];
-
-        actualizarCarrito();
-
-        cerrarCheckout();
-
-        cerrarCarrito();
-
-        document
-            .getElementById(
-                "clienteNombre"
-            )
-            .value = "";
-
-        document
-            .getElementById(
-                "clienteEmail"
-            )
-            .value = "";
-
-        document
-            .getElementById(
-                "metodoPago"
-            )
-            .value = "";
-
-
-    } catch (error) {
-
-        console.error(error);
-
-        alert(
-            "Ocurrió un error al realizar la compra."
-        );
-
-    }
-}
-
-
-/* =====================================================
-   BUSCAR CLIENTE
-===================================================== */
-
-async function obtenerClientePorEmail(email) {
-
-    /*
-       Tu API actual no tiene GET /api/customers,
-       por eso esta función intenta usar
-       el cliente demo.
-    */
-
-    if (
-        email.toLowerCase()
-        === "cliente@demo.com"
-    ) {
-
-        return {
-
-            id: 1,
-
-            name: "Cliente Demo",
-
-            email: "cliente@demo.com"
-
-        };
-
-    }
-
-
-    return null;
-}
-
-
-/* =====================================================
-   LOGIN
-===================================================== */
-
-document
-    .getElementById("loginForm")
-    .addEventListener(
-        "submit",
-        async function(event) {
-
-            event.preventDefault();
-
-
-            const email =
-                document
-                    .getElementById(
-                        "loginEmail"
-                    )
-                    .value
-                    .trim();
-
-
-            try {
-
-                const respuesta =
-                    await fetch(
-                        "/api/login",
-                        {
-                            method: "POST",
-
-                            headers: {
-                                "Content-Type":
-                                    "application/json"
-                            },
-
-                            body:
-                                JSON.stringify({
-                                    email: email
-                                })
-
-                        }
-                    );
-
-
-                const resultado =
-                    await respuesta.json();
-
-
-                const usuario =
-                    document.getElementById(
-                        "usuarioLogueado"
-                    );
-
-
-                if (
-                    respuesta.ok
-                ) {
-
-                    clienteActual =
-                        resultado;
-
-
-                    usuario.style.display =
-                        "block";
-
-
-                    usuario.innerHTML = `
-
-                        ✅
-                        <strong>
-                            Sesión iniciada
-                        </strong>
-
-                        <br>
-
-                        Bienvenido:
-                        ${resultado.email}
-
-                    `;
-
-
-                } else {
-
-                    usuario.style.display =
-                        "block";
-
-
-                    usuario.style.background =
-                        "#fee2e2";
-
-
-                    usuario.style.color =
-                        "#991b1b";
-
-
-                    usuario.innerHTML = `
-
-                        ❌
-                        ${
-                            resultado.error
-                            ||
-                            "No se pudo iniciar sesión."
-                        }
-
-                    `;
-
-                }
-
-
-            } catch (error) {
-
-                console.error(error);
-
-                alert(
-                    "No se pudo conectar con el servidor."
+                throw new Error(
+                    "No se pudieron obtener los productos"
                 );
 
             }
 
+            const productos =
+                await respuesta.json();
+
+            contenedor.innerHTML = "";
+
+
+            if (productos.length === 0) {
+
+                contenedor.innerHTML = `
+                    <div class="cargando">
+                        No hay productos disponibles.
+                    </div>
+                `;
+
+                return;
+            }
+
+
+            productos.forEach(producto => {
+
+                const tarjeta =
+                    document.createElement("div");
+
+                tarjeta.className = "product";
+
+
+                const stockDisponible =
+                    producto.stock > 0;
+
+
+                tarjeta.innerHTML = `
+
+                    <div class="icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        ${producto.name}
+                    </h3>
+
+                    <span class="category">
+                        ${producto.category}
+                    </span>
+
+                    <p class="description">
+                        ${producto.description}
+                    </p>
+
+                    <p class="price">
+                        $${Number(producto.price).toFixed(2)}
+                    </p>
+
+                    <p class="stock
+                        ${stockDisponible
+                            ? "stock-disponible"
+                            : "stock-agotado"}">
+
+                        ${
+                            stockDisponible
+                                ? "📦 Stock disponible: "
+                                    + producto.stock
+                                : "❌ Producto agotado"
+                        }
+
+                    </p>
+
+                    <button
+                        class="btn-carrito"
+                        ${
+                            !stockDisponible
+                                ? "disabled"
+                                : ""
+                        }
+                        onclick="agregarCarrito(
+                            '${producto.name.replace(/'/g, "\\'")}'
+                        )"
+                    >
+
+                        ${
+                            stockDisponible
+                                ? "🛒 Agregar al carrito"
+                                : "Agotado"
+                        }
+
+                    </button>
+
+                `;
+
+                contenedor.appendChild(tarjeta);
+
+            });
+
+
+        } catch (error) {
+
+            contenedor.innerHTML = `
+
+                <div class="cargando">
+
+                    ❌ No se pudieron cargar los productos.
+
+                </div>
+
+            `;
+
+            console.error(error);
+
         }
-    );
+
+    }
 
 
-/* =====================================================
-   AGREGAR PRODUCTO
-===================================================== */
+    // ==========================================
+    // AGREGAR PRODUCTO AL CARRITO
+    // ==========================================
 
-document
-    .getElementById("productoForm")
-    .addEventListener(
-        "submit",
-        async function(event) {
+    function agregarCarrito(nombre) {
+
+        const mensaje =
+            document.getElementById("mensaje");
+
+        mensaje.textContent =
+            "🛒 " + nombre +
+            " fue agregado al carrito.";
+
+        mensaje.className =
+            "mensaje-exito";
+
+        setTimeout(() => {
+
+            mensaje.className = "";
+
+        }, 3000);
+
+    }
+
+
+    // ==========================================
+    // CREAR PRODUCTO
+    // ==========================================
+
+    document
+        .getElementById("producto-form")
+        .addEventListener("submit", async function(event) {
 
             event.preventDefault();
 
 
+            const nombre =
+                document.getElementById("nombre").value.trim();
+
+            const categoria =
+                document.getElementById("categoria").value.trim();
+
+            const precio =
+                Number(
+                    document.getElementById("precio").value
+                );
+
+            const stock =
+                Number(
+                    document.getElementById("stock").value
+                );
+
+            const descripcion =
+                document
+                    .getElementById("descripcion")
+                    .value
+                    .trim();
+
+
+            const mensaje =
+                document.getElementById("mensaje");
+
+
             const producto = {
 
-                name:
-                    document
-                        .getElementById(
-                            "nombreProducto"
-                        )
-                        .value
-                        .trim(),
+                name: nombre,
 
-                category:
-                    document
-                        .getElementById(
-                            "categoriaProducto"
-                        )
-                        .value
-                        .trim(),
+                category: categoria,
 
-                price:
-                    Number(
-                        document
-                            .getElementById(
-                                "precioProducto"
-                            )
-                            .value
-                    ),
+                price: precio,
 
-                stock:
-                    Number(
-                        document
-                            .getElementById(
-                                "stockProducto"
-                            )
-                            .value
-                    ),
+                stock: stock,
 
-                description:
-                    document
-                        .getElementById(
-                            "descripcionProducto"
-                        )
-                        .value
-                        .trim()
+                description: descripcion
 
             };
 
@@ -2338,127 +767,81 @@ document
             try {
 
                 const respuesta =
-                    await fetch(
-                        "/api/products",
-                        {
-                            method: "POST",
+                    await fetch("/api/products", {
 
-                            headers: {
-                                "Content-Type":
-                                    "application/json"
-                            },
+                        method: "POST",
 
-                            body:
-                                JSON.stringify(
-                                    producto
-                                )
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
 
-                        }
-                    );
+                        body:
+                            JSON.stringify(producto)
+
+                    });
 
 
                 const resultado =
                     await respuesta.json();
 
 
-                if (
-                    respuesta.ok
-                ) {
+                if (!respuesta.ok) {
 
-                    mostrarMensaje(
-                        "✅ Producto agregado correctamente.",
-                        "success"
-                    );
-
-
-                    document
-                        .getElementById(
-                            "productoForm"
-                        )
-                        .reset();
-
-
-                    await cargarProductos();
-
-
-                    document
-                        .getElementById(
-                            "productos"
-                        )
-                        .scrollIntoView();
-
-
-                } else {
-
-                    mostrarMensaje(
-                        "❌ " +
-                        (
-                            resultado.error
-                            ||
-                            "No se pudo agregar."
-                        ),
-                        "error"
+                    throw new Error(
+                        resultado.error ||
+                        "No se pudo crear el producto"
                     );
 
                 }
 
 
+                mensaje.textContent =
+                    "✅ Producto agregado correctamente.";
+
+                mensaje.className =
+                    "mensaje-exito";
+
+
+                // Limpiar formulario
+
+                document
+                    .getElementById("producto-form")
+                    .reset();
+
+
+                // Volver a cargar productos
+
+                await cargarProductos();
+
+
+                setTimeout(() => {
+
+                    mensaje.className = "";
+
+                }, 3000);
+
+
             } catch (error) {
+
+                mensaje.textContent =
+                    "❌ " + error.message;
+
+                mensaje.className =
+                    "mensaje-error";
 
                 console.error(error);
 
-                mostrarMensaje(
-                    "❌ Error de conexión con el servidor.",
-                    "error"
-                );
-
             }
 
-        }
-    );
+        });
 
 
-/* =====================================================
-   MENSAJES
-===================================================== */
+    // ==========================================
+    // INICIAR APLICACIÓN
+    // ==========================================
 
-function mostrarMensaje(texto, tipo) {
-
-    const mensaje =
-        document.getElementById(
-            "mensaje"
-        );
-
-
-    mensaje.textContent =
-        texto;
-
-
-    mensaje.className =
-        tipo;
-
-
-    setTimeout(
-        function() {
-
-            mensaje.textContent = "";
-
-            mensaje.className = "";
-
-        },
-        3500
-    );
-
-}
-
-
-/* =====================================================
-   INICIAR
-===================================================== */
-
-cargarProductos();
-
-actualizarCarrito();
+    cargarProductos();
 
 </script>
 
